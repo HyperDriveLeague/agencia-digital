@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import {prices} from '../data/site.js';
+---
+<Base title="Servicios y precios"><section class="container page-head"><div class="eyebrow">Servicios</div><h1>Todo lo que tu marca necesita.</h1><p class="lead">Soluciones visuales y digitales, de la primera idea al lanzamiento. Precios de partida, sin IVA.</p></section><section class="container section"><div class="pricing">{prices.map(group=><article class="price-card" id={group.slug}><h2>{group.group}</h2>{group.items.map(([name,price])=><div class="price-line"><span>{name}</span><strong>Desde {price.toLocaleString('es-ES')} €{group.slug==='mantenimiento'?'/mes':''}</strong></div>)}</article>)}</div><p class="muted note">Cada presupuesto especifica el alcance, las revisiones y los entregables. Dominio, alojamiento, licencias, servicios externos e impuestos no incluidos salvo acuerdo expreso.</p><div class="actions"><a class="button" href="/contacto">Solicitar presupuesto ↗</a></div></section></Base>
