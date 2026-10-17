@@ -1,0 +1,5 @@
+---
+import Base from '../layouts/Base.astro';
+import {site} from '../data/site.js';
+---
+<Base title="Contacto"><section class="container page-head"><div class="eyebrow">Contacto</div><h1>Cuéntanos tu idea.</h1><p class="lead">Cada proyecto empieza con una conversación. Describe lo que necesitas y prepararemos una propuesta a medida.</p></section><section class="container section"><div class="empty">{site.email?<><h2>Hablemos.</h2><a class="button" href={`mailto:${site.email}?subject=Solicitud%20de%20presupuesto`}>{site.email} ↗</a></>:<><h2>Canal de contacto en preparación.</h2><p>El correo profesional se añadirá cuando definamos los datos de la agencia. Por ahora no recogemos datos personales mediante formularios.</p><p class="muted">Configurar en src/data/site.js</p></>}</div></section></Base>
